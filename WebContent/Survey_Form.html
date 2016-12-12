@@ -1,0 +1,111 @@
+<?xml version = "1.0" encoding = "utf-8"?><!doctype html><meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<html lang = "en">
+<head>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
+	<script type="text/javascript" src="Greeting.js"></script>
+	<link rel="stylesheet" href="style.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<link rel="stylesheet" type="text/css" 	href="jquery-ui.structure.css">
+	<link rel="stylesheet" type="text/css" 	href="jquery-ui.theme.css">
+	
+	<title>CS Department Survey</title>
+</head>
+
+<body onload = "Greeting()">
+	
+	<h3 id = "msg"></h3>
+	<p id="wronguser"><a id="wrong_user_link"
+				href="javascript:void(0);"> "Click here if your name is not correct"</a></p> 
+	<h1 align="center">Computer Science Department Survey</h1>
+	
+	<p> This is a survey page for the Computer Science department which helps us to know about the feedback of students and what they like or dislike about the departmemt. This will helps us to work on areas which needs improvement.</p><br>
+
+<form id="surveyform" name="surveyform"  action="StrutAction" method="post" onsubmit="return ValidateForm()">
+
+<div id="errmsgbox">
+
+<div id="divError"style="display: none;">
+		<p class="error">Errors on the page!</p></div>
+
+</div>
+
+<Table border = "1" align="center" cellpadding="5" cellspacing="0">
+	<tr><td><label class="data">Name:</label><br/><input type="text" maxlength="25" id="name" name = "name"  autofocus  required><br/><label class="errormsg" id="nm2"></label></td>
+	
+	<td><label class="data">E-mail:</label><br/> <input type="text" id="email" name="email" placeholder="your@email.com" maxlength="50" required></td>
+	
+	<td><label class="data">Street Address:</label><br/><input type="text" maxlength="25" id="address" name="address" required ></td></tr>
+	
+	<tr><td><label class="data">Zip:</label><br/><input type="number" name="zip" ><div id="zerr" class="error" required></div></td>
+	
+	<td><label class="data">City:</label><br/><input name="city" class="autopop" required></td>
+	
+	<td><label class="data">State:</label><br/><input name="state" class="autopop" required></td></tr>
+	
+	<tr><td><label class="data">Telephone Number:</label><br/> <input type="text" name="cellphone" maxlength="12" id="num" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" placeholder = "XXX-XXX-XXXX" required></td>
+	
+	<td><label class="data">URL:</label><br/><input type="url" name="url"  pattern="https?://.+" maxlength="50" placeholder="http://www.xyz.com" required/></td>
+	
+	<td><label class="data">Date of Survey:</label><br/><input type="date" name="dos" required></td></tr>
+	
+	<tr><td><label class="data">High School Graduation Date:</label><br/>
+		<input list="Months" name="month" required>
+		<datalist id="Months">
+			<option value="January"><option value="February"><option value="March"><option value="April"><option value="May"><option value="June"><option value="July"><option value="August">
+			<option value="September"><option value="October"><option value="November"><option value="December"></datalist><input type="text" name="year" placeholder= "yyyy" maxlength="4" required min="1950"></td>
+
+		
+	
+		<td><label class="data">#ID:</label> <br/> <input type="text" name="id" required>   <div id="idErr" class="field_error"></div></td>
+		
+		<td><label class="data">Data:</label> <br/> <input name="data" id="dat" type = "text"  required/>   <div id="DataError"></div> </td></tr>
+		
+		<tr><td><label class="data" id="sd_1">What are the things you liked the most?</label><br/>
+				<table>
+					<tr ><td width="20%"><input type="checkbox" name="camp" value="Students">Students</td>
+						<td><input type="checkbox" name="camp" value="Location">Location</td>
+						<td><input type="checkbox" name="camp" value="Campus">Campus</td></tr>
+						<tr><td><input type="checkbox" name="camp" value="Atmosphere">Atmosphere</td>
+						<td><input type="checkbox" name="camp" value="DormRooms">Dorm Rooms</td>
+						<td><input type="checkbox" name="camp" value="Sports">Sports</td></tr>
+				</table>
+			<td><label class="data" id="sd_2">How you heard about GMU?</label><br/>
+				<table>
+					<tr><td ><input type="radio" name="university" value="Friend">Friends</td>
+						<td><input type="radio" name="university" value="Television">Television</td></tr>
+						<td><input type="radio" name="university" value="Internet">Internet</td>
+						<td><input type="radio" name="university" value="Other">Other</td></tr>
+				</table>
+			<td><label class="data"id="sd_3">Recommendation for others:</label><br/	>
+					<select name ="recommend">
+						<option value = "very likely">Very Likely</option>
+						<option value = "likely">Likely</option>
+						<option value = "unlikely">Unlikely</option>
+					</select></td></tr>
+			<tr><td colspan="3" align="center">Comments:<br>
+					<textarea  align="center" rows="5" cols="50" wrap="physical" name="comments" maxlength= "350" placeholder="maximum 350 characters" required></textarea></td>
+			</tr>
+			
+	
+				
+		
+				
+</Table><br/>
+
+<input id="submit" type="submit" value="Submit"></button>&nbsp;<button align="center" onclick="resetform()">Reset</button>
+</form>
+
+
+
+<footer class ="foo"><a href="http://www2.gmu.edu" target="_blank" class="Image"><img class ="gmu" src ="GMU_Logo.png"/></a></footer>
+
+<p>Pradeep Tomar (SWE642_Assignment_5) </p>
+
+
+
+
+
+</body>
+</html>

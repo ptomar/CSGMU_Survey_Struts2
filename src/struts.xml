@@ -1,0 +1,25 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<!-- For logging messages.....Please turn this option off before deploying application to a production environment.! -->
+    <!--   It can expose sensitive data of your application! -->
+    	<constant name="struts.devMode" value="true" />
+    	
+	<package name="default" namespace="/" extends="struts-default">
+		
+	<action name="StrutAction" class="main.StrutsInAction">
+		<result name="simplejsp">SimpleAcknowledgement.jsp</result>
+		<result name="winnerjsp">WinnerAcknowledgement.jsp</result>
+		<result name="notfound">NoSuchStudent.jsp</result>
+	</action>
+	
+	<action name="popstudent" method="popstudentdetails" class="main.StrutsInAction" >
+		<result name="found">StudentDetails.jsp</result>
+		
+	</action>
+		
+	</package>
+</struts>
